@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #f4f4f4;
+            margin-left: 13vh;
+           
+        }
+        form{
+            text-align: center;
+            display: grid;
+            width: 40vh;
+            border: none;
+            background-color: rgb(218, 218, 235);
+            border: 2px solid rgb(186, 186, 201);
+        }
+        button{
+            text-align: center;
+            display: grid;
+            margin-left: 80px;
+            font-size: 15px;
+            background-color: aquamarine;
+            cursor: pointer;
+        }
+      
+    </style>
+  </head>
+  <body>
+    <h2>ID Card with form data</h2>
+    <form>
+        <label type="text">Name</label>
+      <input type="text" id="name" />
+      
+      <br />
+      <label type="text">ID No</label>
+      <input type="text" id="idno" />
+     
+      <br />
+      <label type="text">Course</label>
+      <input type="text" id="course" />
+     
+      <br />
+      <label type="text">cell</label>
+      <input type="text" id="cell" />
+      
+      <br />
+      <label type="email">Email</label>
+      <input type="email" id="email" />
+     
+      <br />
+      <label type="date">Date of Birth</label>
+      <input type="text" id="date" />
+      
+      <br />
+      <label type="text">Blood group</label>
+      <input type="text" id="bg" />
+      <br>
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" accept="image/*" required />
+    
+    <button type="submit" id="submit">submit</button>
+</form>
+    <div>
+      <h2 id="name1"></h2>
+      <p>ID no:<div id="idno1"></div></p>
+      <p>Course:<div id="course1"></div></p>
+     <P>Cell:<div id="cell1"></div></P>
+      <P>Email:<div id="email1"></div></P>
+     <p>Date of birth: <div id="date1"></div></p>
+      <p>Blood group:<div id="bg1"></div></p>
+      <div class="photo" id="photoDisplay"></div>
+    </div>
+    <script>
+      document.getElementById("submit").addEventListener("click",  (event) =>{
+        event.preventDefault()
+        const name = document.getElementById("name").value
+        const idno = document.getElementById("idno").value
+        const course = document.getElementById("course").value;
+        const cell = document.getElementById("cell").value;
+        const email = document.getElementById("email").value;
+        const date = document.getElementById("date").value;
+        const bg = document.getElementById("bg").value;
+        const photoInput = document.getElementById("photo");
+
+        
+        document.getElementById("name1").innerHTML = name,
+        document.getElementById("idno1").innerHTML = idno;
+        document.getElementById("course1").innerHTML = course;
+        document.getElementById("cell1").innerHTML = cell;
+        document.getElementById("email1").innerHTML = email;
+        document.getElementById("date1").innerHTML = date;
+        document.getElementById("bg1").innerHTML = bg;
+        document.getElementById( "photoDisplay" ).style.backgroundImage = `url(${e.target.result})`;
+           
+      });
+
+    </script>
+  </body>
+</html>
